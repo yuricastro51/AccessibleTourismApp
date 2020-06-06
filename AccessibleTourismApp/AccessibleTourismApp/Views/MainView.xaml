@@ -1,11 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AccessibleTourismApp.Views.MainView"
-             Title="{Binding Title}">
-
-    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-        <Label Text="Welcome to Xamarin Forms and Prism!" />
-    </StackLayout>
-
-</ContentPage>
+<TabbedPage
+    x:Class="AccessibleTourismApp.Views.MainView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:views="clr-namespace:AccessibleTourismApp.Views;assembly=AccessibleTourismApp"
+    BarBackgroundColor="{StaticResource NavigationBarColor}"
+    TabbedPage.SelectedTabColor="#55574F"
+    TabbedPage.UnselectedTabColor="#9F9797">
+    <views:PlacesView />
+    <views:MapView />
+</TabbedPage>

@@ -4,12 +4,15 @@ using Prism.Navigation;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using AccessibleTourismApp.Interfaces;
+using AccessibleTourismApp.Services;
 
 namespace AccessibleTourismApp.ViewModels
 {
     public class ViewModelBase : BindableBase, IInitialize, INavigationAware, IDestructible
     {
         protected INavigationService NavigationService { get; private set; }
+        public readonly IApi Api = new ApiServiceFake();
 
         private string _title;
         public string Title

@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="AccessibleTourismApp.Views.PlacesView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:pancakeView="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+    Title="Place"
+    mc:Ignorable="d">
+    <ContentPage.Content>
+        <FlexLayout Direction="Column">
+            <BoxView BackgroundColor="#9F9797" HeightRequest="1" />
+            <CollectionView ItemsSource="{Binding Places}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <pancakeView:PancakeView Padding="6">
+                            <pancakeView:PancakeView BackgroundColor="White" CornerRadius="12">
+                                <pancakeView:PancakeView.Shadow>
+                                    <pancakeView:DropShadow
+                                        BlurRadius="5"
+                                        Offset="0,0"
+                                        Color="#000000" />
+                                </pancakeView:PancakeView.Shadow>
+
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <pancakeView:PancakeView Grid.Column="0" CornerRadius="12">
+                                        <ffimageloading:CachedImage
+                                            Aspect="AspectFill"
+                                            HeightRequest="100"
+                                            Source="{Binding Image}"
+                                            WidthRequest="100" />
+                                    </pancakeView:PancakeView>
+
+                                    <FlexLayout
+                                        Grid.Column="1"
+                                        Padding="10"
+                                        Direction="Column"
+                                        JustifyContent="SpaceAround">
+                                        <Label
+                                            FontSize="Title"
+                                            LineBreakMode="TailTruncation"
+                                            Text="{Binding Title}" />
+
+                                        <Label
+                                            FontSize="Small"
+                                            LineBreakMode="TailTruncation"
+                                            Text="{Binding SubTitle}" />
+                                    </FlexLayout>
+
+                                </Grid>
+                            </pancakeView:PancakeView>
+                        </pancakeView:PancakeView>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </FlexLayout>
+    </ContentPage.Content>
+</ContentPage>

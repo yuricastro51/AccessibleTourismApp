@@ -34,6 +34,8 @@ namespace AccessibleTourismApp
 
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<MainView, MainViewModel>();
+            containerRegistry.RegisterForNavigation<MapView, MapViewModel>();
+            containerRegistry.RegisterForNavigation<PlacesView, PlacesViewModel>();
         }
     }
 }

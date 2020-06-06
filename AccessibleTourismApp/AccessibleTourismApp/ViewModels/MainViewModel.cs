@@ -3,8 +3,13 @@ using Prism.Mvvm;
 using Prism.Navigation;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
+using AccessibleTourismApp.Model;
+using AccessibleTourismApp.Services;
+using Tab = Xamarin.Forms.Tab;
 
 namespace AccessibleTourismApp.ViewModels
 {
@@ -13,7 +18,8 @@ namespace AccessibleTourismApp.ViewModels
         public MainViewModel(INavigationService navigationService)
             : base(navigationService)
         {
-            Title = "Main Page";
+            
         }
+
     }
 }
